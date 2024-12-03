@@ -170,8 +170,8 @@ async def upload(bot: Client, m: Message):
 
             try:  
                 
-                cc = f'[📽] Vid_ID:** {str(count).zfill(3)}\n**Tɪᴛᴛʟᴇ  »** {name1} {res} «﹝LUCIFER💀﹞».mkv\n**Bᴀᴛᴄʜ Nᴀᴍᴇ »** {b_name}\n\n**𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 ➤ {MR}**\n\n'
-                cc1 = f'[📁] Pdf_ID:** {str(count).zfill(3)}\n**Tɪᴛᴛʟᴇ »** {name1} «﹝LUCIFER💀﹞».pdf \n**Bᴀᴛᴄʜ Nᴀᴍᴇ »** {b_name}\n\n**𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 ➤ {MR}**\n
+                cc = f'[🎥]**Vid_id  »** {str(count).zfill(3)}\n**Tɪᴛᴛʟᴇ  »** {name1} {res} «﹝LUCIFER💀﹞».mkv\n**Bᴀᴛᴄʜ Nᴀᴍᴇ »** {b_name}\n\n**𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 ➤ {MR}**\n\n'
+                cc1 = f'[📕]**Pdf_id {str(count).zfill(3)}\n**Tɪᴛᴛʟᴇ »** {name1} «﹝LUCIFER💀﹞».pdf \n**Bᴀᴛᴄʜ Nᴀᴍᴇ »** {b_name}\n\n**𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 ➤ {MR}**\n'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
