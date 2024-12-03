@@ -35,19 +35,19 @@ bot = Client(
 
 @bot.on_message(filters.command(["start"]))
 async def start(bot: Client, m: Message):
-    await m.reply_text(f"<b>Hello {m.from_user.mention} 👋\n\n I Am A Bot For Download Links From Your **.TXT** File And Then Upload That File On Telegram So Basically If You Want To Use Me First Send Me /upload Command And Then Follow Few Steps..\n\nUse /stop to stop any ongoing task.</b>")
+    await m.reply_text(f"**Hello Bruh!** [{m.from_user.first_name}](tg://user?id={m.from_user.id})\n>>I am TXT file Dowloader Bot.\n>>Send me /lucifer Command And Follow Steps/n If You Want To Stop Me Just Send /rukja to stop me 😎")
 
 
-@bot.on_message(filters.command("stop"))
+@bot.on_message(filters.command("rukja"))
 async def restart_handler(_, m):
     await m.reply_text("**Stopped**🚦", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
 
-@bot.on_message(filters.command(["upload"]))
+@bot.on_message(filters.command(["lucifer"]))
 async def upload(bot: Client, m: Message):
-    editable = await m.reply_text('𝕤ᴇɴᴅ ᴛxᴛ ғɪʟᴇ ⚡️')
+    editable = await m.reply_text('**Please Send TXT file for download**')
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -69,18 +69,22 @@ async def upload(bot: Client, m: Message):
            return
     
    
-    await editable.edit(f"**𝕋ᴏᴛᴀʟ ʟɪɴᴋ𝕤 ғᴏᴜɴᴅ ᴀʀᴇ🔗🔗** **{len(links)}**\n\n**𝕊ᴇɴᴅ 𝔽ʀᴏᴍ ᴡʜᴇʀᴇ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ɪɴɪᴛɪᴀʟ ɪ𝕤** **1**")
+    await editable.edit(f"Total links found are **{len(links)}**\n\nSend From where you want to download initial is **1**")
     input0: Message = await bot.listen(editable.chat.id)
     raw_text = input0.text
     await input0.delete(True)
 
-    await editable.edit("**Now Please Send Me Your Batch Name**")
+    await editable.edit("**Send Me Your Batch Name or send `/de` for grabing from text filename.**")
     input1: Message = await bot.listen(editable.chat.id)
-    raw_text0 = input1.text
+    raw_text0 = input1.text   
     await input1.delete(True)
+    if raw_text0 == '/de':
+        b_name = file_name  
+    else: 
+        b_name = raw_text0   
     
 
-    await editable.edit("**𝔼ɴᴛᴇʀ ʀᴇ𝕤ᴏʟᴜᴛɪᴏɴ📸**\n144,240,360,480,720,1080 please choose quality")
+    await editable.edit("**𝔼ɴᴛᴇʀ ʀᴇ𝕤ᴏʟᴜᴛɪᴏɴ📸**\n`144` 🍃,`240` 🌱,`360` ☘️,`480` 🌿,`720` 🪴,`1080` 🌲 please choose quality. \n\n⚠️ Quality Will Change On only Ytdl Links")
     input2: Message = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
     await input2.delete(True)
@@ -104,12 +108,12 @@ async def upload(bot: Client, m: Message):
     
     
 
-    await editable.edit("Now Enter A Caption to add caption on your uploaded file")
+    await editable.edit("**Now Enter A Caption to add caption on your uploaded file\n\n>>OR Send `de` for use default**")
     input3: Message = await bot.listen(editable.chat.id)
     raw_text3 = input3.text
     await input3.delete(True)
     highlighter  = f"️ ⁪⁬⁮⁮⁮"
-    if raw_text3 == 'Robin':
+    if raw_text3 == 'de':
         MR = highlighter 
     else:
         MR = raw_text3
@@ -166,8 +170,8 @@ async def upload(bot: Client, m: Message):
 
             try:  
                 
-                cc = f'**[📽️] Vid_ID:** {str(count).zfill(3)}.** {𝗻𝗮𝗺𝗲𝟭}{MR}.mkv\n**𝔹ᴀᴛᴄʜ** » **{raw_text0}**'
-                cc1 = f'**[📁] Pdf_ID:** {str(count).zfill(3)}. {𝗻𝗮𝗺𝗲𝟭}{MR}.pdf \n**𝔹ᴀᴛᴄʜ** » **{raw_text0}**'
+                cc = f'[🎥]**Vid_id  »** {str(count).zfill(3)}\n**Tɪᴛᴛʟᴇ  »** {name1} {res} «﹝LUCIFER💀﹞».mkv\n**Bᴀᴛᴄʜ Nᴀᴍᴇ »** {b_name}\n\n**𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 ➤ {MR}**\n\n'
+                cc1 = f'[📕]**Pdf_id  »** {str(count).zfill(3)}\n**Tɪᴛᴛʟᴇ »** {name1} «﹝LUCIFER💀﹞».pdf \n**Bᴀᴛᴄʜ Nᴀᴍᴇ »** {b_name}\n\n**𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 ➤ {MR}**\n
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
@@ -193,7 +197,7 @@ async def upload(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    Show = f"**⥥ 🄳🄾🅆🄽🄻🄾🄰🄳🄸🄽🄶⬇️⬇️... »**\n\n**📝Name »** `{name}\n❄Quality » {raw_text2}`\n\n**🔗URL »** `{url}`"
+                    Show = f"**⥥ 📥 ＤＯＷＮＬＯＤＩＮＧ 📥 :-**\n\n**📝Name »** `{name}\n❄𝐐𝐮𝐚𝐥𝐢𝐭𝐲 » {raw_text2}`\n\n**Url :-** `KYA KREGA URL KA🙄`\n\n **Bot made by 👉 @LP_LUCIFER"
                     prog = await m.reply_text(Show)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
@@ -204,13 +208,13 @@ async def upload(bot: Client, m: Message):
 
             except Exception as e:
                 await m.reply_text(
-                    f"**downloading Interupted **\n{str(e)}\n**Name** » {name}\n**Link** » `{url}`"
+                   f"**downloading failed 🔰『«﹝LUCIFER💀﹞»』🔰**\n{str(e)}\n**Name** - {name}\n**Link** - `{url}`"
                 )
                 continue
 
     except Exception as e:
         await m.reply_text(e)
-    await m.reply_text("**𝔻ᴏɴᴇ 𝔹ᴏ𝕤𝕤😎**")
+    await m.reply_text("**HO GYA BE 😎\n\nBY- LUCIFER💀**")
 
 
 bot.run()
