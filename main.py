@@ -35,12 +35,12 @@ bot = Client(
 
 @bot.on_message(filters.command(["start"]))
 async def start(bot: Client, m: Message):
-    await m.reply_text(f"**Hello Bruh!** [{m.from_user.first_name}](tg://user?id={m.from_user.id})\n>>I am TXT file Dowloader Bot.\n>>Send me /lucifer Command And Follow Steps/n If You Want To Stop Me Just Send /rukja to stop me 😎")
+    await m.reply_text(f"**Hm bhai😴!** [{m.from_user.first_name}](tg://user?id={m.from_user.id})\n☠️I am TXT file Dowloader Bot.☠️\n☠️Send me /lucifer Command And Follow Steps☠️/n ❤️If You Want To Stop Me Just Send /rukja to stop me 😎/n baki or sab badhiya hai n😂🤧")
 
 
 @bot.on_message(filters.command("rukja"))
 async def restart_handler(_, m):
-    await m.reply_text("**Stopped**🚦", True)
+    await m.reply_text("**Ji Maalik**🚦", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
@@ -217,4 +217,6 @@ async def upload(bot: Client, m: Message):
     await m.reply_text("**HO GYA BE 😎\n\nBY- LUCIFER💀**")
 
 
+print("ALL LECTURES DOWLOADED SUCCESFULLY.🤗\nBY @LP_LUCIFER")
+print("CHLTA HU BYE😎")
 bot.run()
