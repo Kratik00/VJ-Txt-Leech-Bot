@@ -10,6 +10,8 @@ import time
 import asyncio
 import requests
 import subprocess
+import helper
+from helper import get_drm_keys
 
 import core as helper
 from utils import progress_bar
