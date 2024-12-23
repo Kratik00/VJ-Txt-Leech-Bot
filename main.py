@@ -82,6 +82,17 @@ Busy = InlineKeyboardMarkup(
         ],
     ]
 )
+@bot.on_message(filters.command(["logs"]) )
+async def send_logs(bot: Client, m: Message):
+    try:
+        
+        # Assuming `assist.txt` is located in the current directory
+         with open("Assist.txt", "rb") as file:
+            sent= await m.reply_text("**📤 Sending you ....**")
+            await m.reply_document(document=file)
+            await sent.delete(True)
+    except Exception as e:
+        await m.reply_text(f"Error sending logs: {e}")
 
 image_urls = [
     "https://graph.org/file/26b8e54ee4a9189afc824-b2ba426bc67bcdb772.jpg",
