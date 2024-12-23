@@ -22,6 +22,7 @@ from pyromod import listen
 from subprocess import getstatusoutput
 
 from pyrogram import Client, filters
+from bs4 import BeautifulSoup
 from pyrogram.types import Message 
 from pyrogram.types.messages_and_media import message
 from pyrogram.errors import FloodWait
