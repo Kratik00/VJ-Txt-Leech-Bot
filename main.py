@@ -11,6 +11,7 @@ import asyncio
 import requests
 import subprocess
 import helper
+import random
 from helper import get_drm_keys
 
 import core as helper
