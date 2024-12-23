@@ -22,11 +22,9 @@ from pyromod import listen
 from subprocess import getstatusoutput
 
 from pyrogram import Client, filters
-from bs4 import BeautifulSoup
 from pyrogram.types import Message 
 from pyrogram.errors import FloodWait
 from pyrogram.errors.exceptions.bad_request_400 import StickerEmojiInvalid
-from pyrogram.types.messages_and_media import message
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
@@ -36,94 +34,10 @@ bot = Client(
     api_hash=API_HASH,
     bot_token=BOT_TOKEN)
 
-keyboard = InlineKeyboardMarkup(
-    [
-        [
-            InlineKeyboardButton(
-                text="👨🏻‍💻 Devloper",
-                url="https://t.me/LP_LUCIFER",
-            ),
-            InlineKeyboardButton(
-                text="❣️ GITHUB",
-                url="https://t.me/LP_YAGAMI",
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text="🪄 Updates Channel",
-                url="https://t.me/PAVEL",
-            ),
-            
-        ],
-    ]
-)
-
-
-
-Busy = InlineKeyboardMarkup(
-    [
-        [
-            InlineKeyboardButton(
-                text="👨🏻‍💻 Devloper",
-                url="https://t.me/LP_LUCIFER",
-            ),
-            InlineKeyboardButton(
-                text="❣️ GITHUB",
-                url="https://t.me/LP_YAGAMI",
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text="Join to Check My Status ",
-                url="https://t.me/PAVEL",
-            ),
-            
-        ],
-    ]
-)
-@bot.on_message(filters.command(["logs"]) )
-async def send_logs(bot: Client, m: Message):
-    try:
-        
-        # Assuming `assist.txt` is located in the current directory
-         with open("Assist.txt", "rb") as file:
-            sent= await m.reply_text("**📤 Sending you ....**")
-            await m.reply_document(document=file)
-            await sent.delete(True)
-    except Exception as e:
-        await m.reply_text(f"Error sending logs: {e}")
-
-image_urls = [
-    "https://graph.org/file/26b8e54ee4a9189afc824-b2ba426bc67bcdb772.jpg",
-    "https://graph.org/file/29c50d5e34b74c7d9cf94-531077f61e53b01975.jpg",
-    "https://graph.org/file/1da812b94f9de62952609-8ce5b40dde951ccb28.jpg",
-    "https://graph.org/file/fc8739ab3bf461935d89a-94945df68a91d02bc7.jpg",
-    "https://graph.org/file/69f289bed705cb1448e88-a1e4d0440290361348.jpg",
-    "https://graph.org/file/1cd62179e4bb92bbc608e-529ec5b75ca7badaf1.jpg",
-    "https://graph.org/file/2e88df79b49dc73014701-ad45471e7122685a27.jpg",
-    "https://graph.org/file/65427c8becbee43a06ac1-4207603bf43e2e5001.jpg",
-    "https://graph.org/file/65427c8becbee43a06ac1-4207603bf43e2e5001.jpg",
-    "https://graph.org/file/b00f05859a1711534df28-3c0e61443e758976b7.jpg",
-    "https://graph.org/file/86b1dc2e0bb5ed3c9bd7b-5324342075669f65a1.jpg",
-    "https://graph.org/file/b6af33b244923c765a8ec-8b4ed131419669e1f1.jpg",
-    "https://graph.org/file/5269314c1403520b452a5-a75889d1cf0597c3ad.jpg",
-    # Add more image URLs as needed
-]
-
-
-@bot.on_message(filters.command(["jaishreeram"]))
-async def start(bot: Client, m: Message):
-    random_image_url = random.choice(image_urls)
-
-    caption =f"**👋 ʜᴇʟʟᴏ!\n🌟ɪ ᴀᴍ ᴛxᴛ ꜰɪʟᴇ ᴅᴏᴡʟᴏᴀᴅᴇʀ ʙᴏᴛ ** \n\n❤️‍🔥 **ᴘʀᴇꜱꜱ /mahakal ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ᴠɪᴅᴇᴏ ʙʏ ᴛxᴛ**\n\n❤💖 **ᴊᴏɪɴ ᴏᴜʀ <a href='https://t.me/LP_YAGAMI/'>ᴛᴇʟᴇɢʀᴀᴍ ᴄʜᴀɴɴᴇʟ</a>** \n\n<pre>💕 ᴘᴏᴡᴇʀᴇᴅ ʙʏ : https://t.me/LP_LUCIFER</pre>\n-═════━‧₊˚❀༉‧₊˚.━═════-"
+@bot.on_message(filters.command(["jaishreeram"]))    
+async def account_login(bot: Client, m: Message):    
+    editable = await m.reply_text("**👋 ʜᴇʟʟᴏ!\n🌟ɪ ᴀᴍ ᴛxᴛ ꜰɪʟᴇ ᴅᴏᴡʟᴏᴀᴅᴇʀ ʙᴏᴛ ** \n\n❤️‍🔥 **ᴘʀᴇꜱꜱ /mahakal ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ᴠɪᴅᴇᴏ ʙʏ ᴛxᴛ**\n\n❤💖 **ᴊᴏɪɴ ᴏᴜʀ <a href='https://t.me/LP_YAGAMI/'>ᴛᴇʟᴇɢʀᴀᴍ ᴄʜᴀɴɴᴇʟ</a>** \n\n<pre>💕 ᴘᴏᴡᴇʀᴇᴅ ʙʏ : https://t.me/LP_LUCIFER</pre>\n-═════━‧₊˚❀༉‧₊˚.━═════-")
     
-    await bot.send_photo(
-        chat_id = message.sender_chat.id if message.sender_chat else message.from_user.id,
-        photo=random_image_url,
-        caption=caption,
-        reply_markup=keyboard
-    )
-
 @bot.on_message(filters.command("ruko"))
 async def restart_handler(_, m):
     await m.reply_text("💖🚦**ꜱᴛᴏᴘᴘᴇᴅ**🚦💖", True)
