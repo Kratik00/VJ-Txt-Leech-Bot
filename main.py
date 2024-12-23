@@ -34,22 +34,93 @@ bot = Client(
     api_hash=API_HASH,
     bot_token=BOT_TOKEN)
 
+keyboard = InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton(
+                text="👨🏻‍💻 Devloper",
+                url="https://t.me/LP_LUCIFER",
+            ),
+            InlineKeyboardButton(
+                text="❣️ GITHUB",
+                url="https://t.me/LP_YAGAMI",
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="🪄 Updates Channel",
+                url="https://t.me/PAVEL",
+            ),
+            
+        ],
+    ]
+)
 
-@bot.on_message(filters.command(["start"]))
+
+
+Busy = InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton(
+                text="👨🏻‍💻 Devloper",
+                url="https://t.me/LP_LUCIFER",
+            ),
+            InlineKeyboardButton(
+                text="❣️ GITHUB",
+                url="https://t.me/LP_YAGAMI",
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="Join to Check My Status ",
+                url="https://t.me/PAVEL",
+            ),
+            
+        ],
+    ]
+)
+
+image_urls = [
+    "https://graph.org/file/26b8e54ee4a9189afc824-b2ba426bc67bcdb772.jpg",
+    "https://graph.org/file/29c50d5e34b74c7d9cf94-531077f61e53b01975.jpg",
+    "https://graph.org/file/1da812b94f9de62952609-8ce5b40dde951ccb28.jpg",
+    "https://graph.org/file/fc8739ab3bf461935d89a-94945df68a91d02bc7.jpg",
+    "https://graph.org/file/69f289bed705cb1448e88-a1e4d0440290361348.jpg",
+    "https://graph.org/file/1cd62179e4bb92bbc608e-529ec5b75ca7badaf1.jpg",
+    "https://graph.org/file/2e88df79b49dc73014701-ad45471e7122685a27.jpg",
+    "https://graph.org/file/65427c8becbee43a06ac1-4207603bf43e2e5001.jpg",
+    "https://graph.org/file/65427c8becbee43a06ac1-4207603bf43e2e5001.jpg",
+    "https://graph.org/file/b00f05859a1711534df28-3c0e61443e758976b7.jpg",
+    "https://graph.org/file/86b1dc2e0bb5ed3c9bd7b-5324342075669f65a1.jpg",
+    "https://graph.org/file/b6af33b244923c765a8ec-8b4ed131419669e1f1.jpg",
+    "https://graph.org/file/5269314c1403520b452a5-a75889d1cf0597c3ad.jpg",
+    # Add more image URLs as needed
+]
+
+
+@bot.on_message(filters.command(["jaishreeram"]))
 async def start(bot: Client, m: Message):
-    await m.reply_text(f"**Hm bhai😴!** [{m.from_user.first_name}](tg://user?id={m.from_user.id})\n☠️I am TXT file Dowloader Bot.☠️\n☠️Send me /lucifer Command And Follow Steps☠️/n ❤️If You Want To Stop Me Just Send /rukja to stop me 😎/n baki or sab badhiya hai n😂🤧")
+    random_image_url = random.choice(image_urls)
 
+    caption =f"**👋 ʜᴇʟʟᴏ!\n🌟ɪ ᴀᴍ ᴛxᴛ ꜰɪʟᴇ ᴅᴏᴡʟᴏᴀᴅᴇʀ ʙᴏᴛ ** \n\n❤️‍🔥 **ᴘʀᴇꜱꜱ /mahakal ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ᴠɪᴅᴇᴏ ʙʏ ᴛxᴛ**\n\n❤💖 **ᴊᴏɪɴ ᴏᴜʀ <a href='https://t.me/LP_YAGAMI/'>ᴛᴇʟᴇɢʀᴀᴍ ᴄʜᴀɴɴᴇʟ</a>** \n\n<pre>💕 ᴘᴏᴡᴇʀᴇᴅ ʙʏ : https://t.me/LP_LUCIFER</pre>\n-═════━‧₊˚❀༉‧₊˚.━═════-"
+    
+    await bot.send_photo(
+        chat_id=message.chat.id,
+        photo=random_image_url,
+        caption=caption,
+        reply_markup=keyboard
+    )
 
-@bot.on_message(filters.command("rukja"))
+@bot.on_message(filters.command("ruko"))
 async def restart_handler(_, m):
-    await m.reply_text("**Ji Maalik**🚦", True)
+    await m.reply_text("💖🚦**ꜱᴛᴏᴘᴘᴇᴅ**🚦💖", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
 
-@bot.on_message(filters.command(["lucifer"]))
+@bot.on_message(filters.command(["shiv"]))
 async def upload(bot: Client, m: Message):
-    editable = await m.reply_text('**Please Send TXT file for download**')
+    editable = await m.reply_text('**-═════━‧₊˚❀༉‧₊˚.━═════-\n📝 ꜱᴇɴᴅ ᴛxᴛ ꜰɪʟᴇ ꜰᴏʀ ᴅᴏᴡɴʟᴏᴀᴅ**\n-═════━‧₊˚❀༉‧₊˚.━═════-\n.•´¯`•.••   🎀  𝐿𝒰𝒞𝐼𝐹𝐸𝑅  🎀   ••.•`¯´•.••')
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -71,12 +142,12 @@ async def upload(bot: Client, m: Message):
            return
     
    
-    await editable.edit(f"Total links found are **{len(links)}**\n\nSend From where you want to download initial is **1**")
+    await editable.edit(f"**-═════━‧₊˚❀༉‧₊˚.━═════-\nᴛᴏᴛᴀʟ ʟɪɴᴋꜱ ꜰᴏᴜɴᴅ ᴀʀᴇ {len(links)}**\n\nꜱᴇɴᴅ ꜰʀᴏᴍ ᴡʜᴇʀᴇ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ɪɴɪᴛɪᴀʟ ɪꜱ **1**\n-═════━‧₊˚❀༉‧₊˚.━═════-")
     input0: Message = await bot.listen(editable.chat.id)
     raw_text = input0.text
     await input0.delete(True)
 
-    await editable.edit("**Send Me Your Batch Name or send `/de` for grabing from text filename.**")
+    await editable.edit("**-═════━‧₊˚❀༉‧₊˚.━═════-\nᴇɴᴛᴇʀ ʙᴀᴛᴄʜ ɴᴀᴍᴇ ᴏʀ ꜱᴇɴᴅ `/de` ꜰᴏʀ ɢʀᴀʙɪɴɢ ꜰʀᴏᴍ ᴛᴇxᴛ ꜰɪʟᴇɴᴀᴍᴇ.\n-═════━‧₊˚❀༉‧₊˚.━═════-**")
     input1: Message = await bot.listen(editable.chat.id)
     raw_text0 = input1.text   
     await input1.delete(True)
@@ -86,7 +157,7 @@ async def upload(bot: Client, m: Message):
         b_name = raw_text0   
     
 
-    await editable.edit("**𝔼ɴᴛᴇʀ ʀᴇ𝕤ᴏʟᴜᴛɪᴏɴ📸**\n`144` 🍃,`240` 🌱,`360` ☘️,`480` 🌿,`720` 🪴,`1080` 🌲 please choose quality. \n\n⚠️ Quality Will Change On only Ytdl Links")
+    await editable.edit("**╭━━━━❰ᴇɴᴛᴇʀ ʀᴇꜱᴏʟᴜᴛɪᴏɴ❱━➣\n┣⪼ 🌱144\n┣⪼ 🪴240\n┣⪼ 🌿360\n┣⪼ 🌳480\n┣⪼ 🌴720\n┣⪼ 🎄1080\n╰━━⌈⚡[••.•´¯`•.••   🎀  𝐿𝒰𝒞𝐼𝐹𝐸𝑅  🎀   ••.•`¯´•.••]⚡⌋━━➣ **") ")
     input2: Message = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
     await input2.delete(True)
@@ -110,7 +181,7 @@ async def upload(bot: Client, m: Message):
     
     
 
-    await editable.edit("**Now Enter A Caption to add caption on your uploaded file\n\n>>OR Send `de` for use default**")
+    await editable.edit("**-═════━‧₊˚❀༉‧₊˚.━═════-\nᴇɴᴛᴇʀ ʏᴏᴜʀ ɴᴀᴍᴇ ᴏʀ ꜱᴇɴᴅ `de` ꜰᴏʀ ᴜꜱᴇ ᴅᴇꜰᴀᴜʟᴛ\n-═════━‧₊˚❀༉‧₊˚.━═════-**")
     input3: Message = await bot.listen(editable.chat.id)
     raw_text3 = input3.text
     await input3.delete(True)
@@ -120,7 +191,7 @@ async def upload(bot: Client, m: Message):
     else:
         MR = raw_text3
    
-    await editable.edit("Now send the Thumb url/nEg » https://graph.org/file/ce1723991756e48c35aa1.jpg \n Or if don't want thumbnail send = no")
+    await editable.edit("-═════━‧₊˚❀༉‧₊˚.━═════-\nɴᴏᴡ ꜱᴇɴᴅ ᴛʜᴇ **ᴛʜᴜᴍʙ ᴜʀʟ**\nᴇɢ : `https://graph.org/file/6b3baeaf82f7eee52e7f9-b7a6b2c5d5c13bf1c0.jpg`ᴏʀ ꜱᴇɴᴅ [`no`]\n-═════━‧₊˚❀༉‧₊˚.━═════-")
     input6 = message = await bot.listen(editable.chat.id)
     raw_text6 = input6.text
     await input6.delete(True)
@@ -153,13 +224,10 @@ async def upload(bot: Client, m: Message):
             elif 'videos.classplusapp' in url:
              url = requests.get(f'https://api.classplusapp.com/cams/uploader/video/jw-signed-url?url={url}', headers={'x-access-token': 'eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJpZCI6MzgzNjkyMTIsIm9yZ0lkIjoyNjA1LCJ0eXBlIjoxLCJtb2JpbGUiOiI5MTcwODI3NzQyODkiLCJuYW1lIjoiQWNlIiwiZW1haWwiOm51bGwsImlzRmlyc3RMb2dpbiI6dHJ1ZSwiZGVmYXVsdExhbmd1YWdlIjpudWxsLCJjb3VudHJ5Q29kZSI6IklOIiwiaXNJbnRlcm5hdGlvbmFsIjowLCJpYXQiOjE2NDMyODE4NzcsImV4cCI6MTY0Mzg4NjY3N30.hM33P2ai6ivdzxPPfm01LAd4JWv-vnrSxGXqvCirCSpUfhhofpeqyeHPxtstXwe0'}).json()['url']
 
-            elif '/master.mpd' in url:
-             id =  url.split("/")[-2]
-             url =  "https://d26g5bnklkwsh4.cloudfront.net/" + id + "/master.m3u8"
-
-            name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").strip()
-            name = f'{str(count).zfill(3)}) {name1[:60]}'
-
+            elif "d1d34p8vz63oiq" in url or "sec1.pw.live" in url:
+              id = url.split("/")[3]
+              url = "https://madxpw.onrender.com/" + id + "/master.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzU1NzkzMDcuMzMzLCJkYXRhIjp7Il9pZCI6IjYzNTE4YzkyOWIwNjg3MDAxOGIyMGM4NCIsInVzZXJuYW1lIjoiNzM4MDgzODQ5MSIsImZpcnN0TmFtZSI6IktyYXRpayIsImxhc3ROYW1lIjoiIiwib3JnYW5pemF0aW9uIjp7Il9pZCI6IjVlYjM5M2VlOTVmYWI3NDY4YTc5ZDE4OSIsIndlYnNpdGUiOiJwaHlzaWNzd2FsbGFoLmNvbSIsIm5hbWUiOiJQaHlzaWNzd2FsbGFoIn0sImVtYWlsIjoia3JhdGlrNDM3QGdtYWlsLmNvbSIsInJvbGVzIjpbIjViMjdiZDk2NTg0MmY5NTBhNzc4YzZlZiJdLCJjb3VudHJ5R3JvdXAiOiJJTiIsInR5cGUiOiJVU0VSIn0sImlhdCI6MTczNDk3NDUwN30.EcclpscuE5LwK_F71MHSS01YaPbX5xTqgEoHFjnjrOc"
+                
             if "youtu" in url:
                 ytf = f"b[height<={raw_text2}][ext=mp4]/bv[height<={raw_text2}][ext=mp4]+ba[ext=m4a]/b[ext=mp4]"
             else:
@@ -172,8 +240,8 @@ async def upload(bot: Client, m: Message):
 
             try:  
                 
-                cc = f'[🎥]**Vid_id  »** {str(count).zfill(3)}\n**Tɪᴛᴛʟᴇ  »** {name1} {res} «﹝LUCIFER💀﹞».mkv\n**Bᴀᴛᴄʜ Nᴀᴍᴇ »** {b_name}\n\n**𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 ➤ {MR}**\n\n'
-                cc1 = f'[📕]**Pdf_id {str(count).zfill(3)}\n**Tɪᴛᴛʟᴇ »** {name1} «﹝LUCIFER💀﹞».pdf \n**Bᴀᴛᴄʜ Nᴀᴍᴇ »** {b_name}\n\n**𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 ➤ {MR}**\n'
+                cc = f'[🎥]**Vid_id  »** {str(count).zfill(3)}\n**Tɪᴛᴛʟᴇ  »** {name1} {res} «﹝••.•´¯`•.••   🎀  𝐿𝒰𝒞𝐼𝐹𝐸𝑅  🎀   ••.•`¯´•.••﹞».mkv\n**Bᴀᴛᴄʜ Nᴀᴍᴇ »** {b_name}\n\n**𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 ➤ {MR}**\n\n'
+                cc1 = f'[📕]**Pdf_id {str(count).zfill(3)}\n**Tɪᴛᴛʟᴇ »** {name1} «﹝••.•´¯`•.••   🎀  𝐿𝒰𝒞𝐼𝐹𝐸𝑅  🎀   ••.•`¯´•.••﹞».pdf \n**Bᴀᴛᴄʜ Nᴀᴍᴇ »** {b_name}\n\n**𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 ➤ {MR}**\n'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
@@ -199,7 +267,7 @@ async def upload(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    Show = f"**⥥ 📥 ＤＯＷＮＬＯＤＩＮＧ 📥 :-**\n\n**📝Name »** `{name}\n❄𝐐𝐮𝐚𝐥𝐢𝐭𝐲 » {raw_text2}`\n\n**Url :-** `KYA KREGA URL KA🙄`\n\n **Bot made by 👉 @LP_LUCIFER"
+                    Show = f"**⚡Dᴏᴡɴʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ....**\n\n**📚❰Name❱** `{name}\n🍁𝐐𝐮𝐚𝐥𝐢𝐭𝐲 » {raw_text2}`\n🌿**Url**» ᴘᴀᴅʜᴀɪ ᴋᴀʀ ʟᴇ ʙʀᴏ🧐\n\n **ʙᴏᴛ ᴍᴀᴅᴇ ʙʏ [••.•´¯`•.••   🎀  𝐿𝒰𝒞𝐼𝐹𝐸𝑅  🎀   ••.•`¯´•.••]**\n**═════━‧₊˚❀༉‧₊˚.━═════ **"
                     prog = await m.reply_text(Show)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
@@ -210,13 +278,13 @@ async def upload(bot: Client, m: Message):
 
             except Exception as e:
                 await m.reply_text(
-                   f"**downloading failed 🔰『«﹝LUCIFER💀﹞»』🔰**\n{str(e)}\n**Name** - {name}\n**Link** - `{url}`"
+                   f"**downloading failed 🔰『«﹝••.•´¯`•.••   🎀  𝐿𝒰𝒞𝐼𝐹𝐸𝑅  🎀   ••.•`¯´•.••﹞»』🔰**\n{str(e)}\n**Name** - {name}\n**Link** - `{url}`"
                 )
                 continue
 
     except Exception as e:
         await m.reply_text(e)
-    await m.reply_text("**HO GYA BE 😎\n\nBY- LUCIFER💀**")
+    await m.reply_text("**ᎠᏫNᎬ ᏴᏫᏚᏚ😎\n\n••.•´¯`•.••   🎀  𝐿𝒰𝒞𝐼𝐹𝐸𝑅  🎀   ••.•`¯´•.••\n\nALL LECTURES DOWLOADED SUCCESFULLY.🤗\nBY @LP_LUCIFER**")
 
 
 print("ALL LECTURES DOWLOADED SUCCESFULLY.🤗\nBY @LP_LUCIFER")
