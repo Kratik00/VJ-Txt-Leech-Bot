@@ -156,12 +156,8 @@ async def upload(bot: Client, m: Message):
                 parts = url.split("/")
                 video_id = parts[-3]  # Extract the video ID
                 zip_file_name = parts[-1]  # Get the ZIP file name
-                download_url = f"https://appx-transcoded-videos-mcdn.akamai.net.in/videos/ssbguide-data/{video_id}/video.mp4"
-             return download_url
-            
-            elif url.endswith((".mp4", ".mkv")):
-            # Handle direct video file links
-            return url
+                url = f"https://appx-transcoded-videos-mcdn.akamai.net.in/videos/ssbguide-data/{video_id}/video.mp4"
+             return url
         
 
     elif url.endswith((".mp4", ".mkv")):
