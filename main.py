@@ -156,9 +156,6 @@ async def upload(bot: Client, m: Message):
              url = f"https://appx-transcoded-videos-mcdn.akamai.net.in/videos/ssbguide-data/{url.split('/')[-3]}/video.mp4"
         
 
-    elif url.endswith((".mp4", ".mkv")):
-        return url
-
     else:
         return None
             elif '/master.mpd' in url:
