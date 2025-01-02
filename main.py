@@ -155,16 +155,18 @@ async def upload(bot: Client, m: Message):
             elif '/360p.zip' in url:
              url = f"https://appx-transcoded-videos-mcdn.akamai.net.in/videos/ssbguide-data/{url.split('/')[-3]}/video.mp4"
         
-
-    else:
-        return None
-            elif '/master.mpd' in url:
-             id =  url.split("/")[-2]
-             url =  "https://d26g5bnklkwsh4.cloudfront.net/" + id + "/master.m3u8"
-
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").strip()
             name = f'{str(count).zfill(3)}) {name1[:60]}'
 
+            if "/master.mpd" in url :
+                if "https://sec1.pw.live/" in url:
+                    url = url.replace("https://sec1.pw.live/","https://d1d34p8vz63oiq.cloudfront.net/")
+                    print(url)
+                
+            if "/master.mpd" in url:
+                cmd= f" yt-dlp -k --allow-unplayable-formats -f bestvideo.{quality} --fixup never {url} "
+                print("counted")
+                
             if "youtu" in url:
                 ytf = f"b[height<={raw_text2}][ext=mp4]/bv[height<={raw_text2}][ext=mp4]+ba[ext=m4a]/b[ext=mp4]"
             else:
