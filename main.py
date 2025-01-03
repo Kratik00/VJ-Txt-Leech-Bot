@@ -85,7 +85,7 @@ async def upload(bot: Client, m: Message):
         b_name = raw_text0   
     
 
-    await editable.edit("**╭━━━━❰ᴇɴᴛᴇʀ ʀᴇꜱᴏʟᴜᴛɪᴏɴ❱━➣\n┣⪼ 🌱144\n┣⪼ 🪴240\n┣⪼ 🌿360\n┣⪼ 🌳480\n┣⪼ 🌴720\n┣⪼ 🎄1080\n╰━━⌈⚡[••.•´¯`•.••   🎀  𝐿𝒰𝒞𝐼𝐹𝐸𝑅  🎀   ••.•`¯´•.••]⚡⌋━━➣ **")
+    await editable.edit("**╭━━━━❰ᴇɴᴛᴇʀ ʀᴇꜱᴏʟᴜᴛɪᴏɴ❱━➣\n┣⪼ 🌱144\n┣⪼ 🪴240\n┣⪼ 🌿360\n┣⪼ 🌳480\n┣⪼ 🌴720\n┣⪼ 🎄1080\n╰━━⌈⚡[𝙇𝙐𝘾𝙄𝙁𝙀𝙍💀]⚡⌋━━➣ **")
     input2: Message = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
     await input2.delete(True)
@@ -179,8 +179,8 @@ async def upload(bot: Client, m: Message):
 
             try:  
                 
-                cc = f'[🎥]**Vid_id  »** {str(count).zfill(3)}\n**Tɪᴛᴛʟᴇ  »** {name1} {res} «﹝••.•´¯`•.••   🎀  𝐿𝒰𝒞𝐼𝐹𝐸𝑅  🎀   ••.•`¯´•.••﹞».mkv\n**Bᴀᴛᴄʜ Nᴀᴍᴇ »** {b_name}\n\n**𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 ➤ {MR}**\n\n'
-                cc1 = f'[📕]**Pdf_id {str(count).zfill(3)}\n**Tɪᴛᴛʟᴇ »** {name1} «﹝••.•´¯`•.••   🎀  𝐿𝒰𝒞𝐼𝐹𝐸𝑅  🎀   ••.•`¯´•.••﹞».pdf \n**Bᴀᴛᴄʜ Nᴀᴍᴇ »** {b_name}\n\n**𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 ➤ {MR}**\n'
+                cc = f'[🎥]**Vid_id  »** {str(count).zfill(3)}\n**Tɪᴛᴛʟᴇ  »** {name1} {res} «﹝𝙇𝙐𝘾𝙄𝙁𝙀𝙍💀﹞».mkv\n**Bᴀᴛᴄʜ Nᴀᴍᴇ »** {b_name}\n\n**𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 ➤ {MR}**\n\n'
+                cc1 = f'[📕]**Pdf_id {str(count).zfill(3)}\n**Tɪᴛᴛʟᴇ »** {name1} «﹝𝙇𝙐𝘾𝙄𝙁𝙀𝙍💀﹞».pdf \n**Bᴀᴛᴄʜ Nᴀᴍᴇ »** {b_name}\n\n**𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 ➤ {MR}**\n'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
@@ -223,7 +223,7 @@ async def upload(bot: Client, m: Message):
 
     except Exception as e:
         await m.reply_text(e)
-    await m.reply_text("**ᎠᏫNᎬ ᏴᏫᏚᏚ😎\n\n𝙇𝙐𝘾𝙄𝙁𝙀𝙍💀\n\nALL LECTURES DOWLOADED SUCCESFULLY.🤗\nBY @LP_LUCIFER**")
+    await m.reply_text("**𝙳𝙾𝙽𝙴 𝙹𝙰𝙽𝙴𝙼𝙰𝙽😎\n\nBY: 𝙇𝙐𝘾𝙄𝙁𝙀𝙍💀\n\nHO GYA BE YE AUR KUCH HAI?💀\nBY @LP_LUCIFER**")
 
 
 print("ALL LECTURES DOWLOADED SUCCESFULLY.🤗\nBY @LP_LUCIFER")
