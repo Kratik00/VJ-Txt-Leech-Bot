@@ -37,11 +37,11 @@ bot = Client(
 
 @bot.on_message(filters.command(["jaishreeram"]))    
 async def account_login(bot: Client, m: Message):    
-    editable = await m.reply_text("**👋 ʜᴇʟʟᴏ!\n🌟ɪ ᴀᴍ ᴛxᴛ ꜰɪʟᴇ ᴅᴏᴡʟᴏᴀᴅᴇʀ ʙᴏᴛ ** \n\n❤️‍🔥 **ᴘʀᴇꜱꜱ /mahakal ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ᴠɪᴅᴇᴏ ʙʏ ᴛxᴛ**\n\n❤💖 **ᴊᴏɪɴ ᴏᴜʀ <a href='https://t.me/LP_YAGAMI/'>ᴛᴇʟᴇɢʀᴀᴍ ᴄʜᴀɴɴᴇʟ</a>** \n\n<pre>💕 ᴘᴏᴡᴇʀᴇᴅ ʙʏ : https://t.me/LP_LUCIFER</pre>\n-═════━‧₊˚❀༉‧₊˚.━═════-")
+    editable = await m.reply_text("**👋 ʜᴇʟʟᴏ!\n🌟ɪ ᴀᴍ ᴛxᴛ ꜰɪʟᴇ ᴅᴏᴡʟᴏᴀᴅᴇʀ ʙᴏᴛ ** \n\n❤️‍🔥 **ᴘʀᴇꜱꜱ [baap se permission li?] ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ᴠɪᴅᴇᴏ ʙʏ ᴛxᴛ**\n\n❤💖 **ᴊᴏɪɴ ᴏᴜʀ <a href='https://t.me/LP_YAGAMI/'>ᴛᴇʟᴇɢʀᴀᴍ ᴄʜᴀɴɴᴇʟ</a>** \n\n<pre>💕 ᴘᴏᴡᴇʀᴇᴅ ʙʏ : https://t.me/LP_LUCIFER</pre>\n-═════━‧₊˚❀༉‧₊˚.━═════-")
     
 @bot.on_message(filters.command("ruko"))
 async def restart_handler(_, m):
-    await m.reply_text("💖🚦**ꜱᴛᴏᴘᴘᴇᴅ**🚦💖", True)
+    await m.reply_text("💀💀**ꜱᴛᴏᴘᴘᴇᴅ**💀💀", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
@@ -206,7 +206,7 @@ async def upload(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    Show = f"**⚡Dᴏᴡɴʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ....**\n\n**📚❰Name❱** `{name}\n🍁𝐐𝐮𝐚𝐥𝐢𝐭𝐲 » {raw_text2}`\n🌿**Url**» ᴘᴀᴅʜᴀɪ ᴋᴀʀ ʟᴇ ʙʀᴏ🧐\n\n **ʙᴏᴛ ᴍᴀᴅᴇ ʙʏ [••.•´¯`•.••   🎀  𝐿𝒰𝒞𝐼𝐹𝐸𝑅  🎀   ••.•`¯´•.••]**\n**═════━‧₊˚❀༉‧₊˚.━═════ **"
+                    Show = f"**⚡Dᴏᴡɴʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ....**\n\n**📚❰Name❱** `{name}\n🍁𝐐𝐮𝐚𝐥𝐢𝐭𝐲 » {raw_text2}`\n🌿**Url**» ᴘᴀᴅʜᴀɪ ᴋᴀʀ ʟᴇ ʙʀᴏ🧐\n\n **ʙᴏᴛ ᴍᴀᴅᴇ ʙʏ [𝙇𝙐𝘾𝙄𝙁𝙀𝙍💀]**\n**═════━‧₊˚❀༉‧₊˚.━═════ **"
                     prog = await m.reply_text(Show)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
@@ -217,13 +217,13 @@ async def upload(bot: Client, m: Message):
 
             except Exception as e:
                 await m.reply_text(
-                   f"**downloading failed 🔰『«﹝••.•´¯`•.••   🎀  𝐿𝒰𝒞𝐼𝐹𝐸𝑅  🎀   ••.•`¯´•.••﹞»』🔰**\n{str(e)}\n**Name** - {name}\n**Link** - `{url}`"
+                   f"**downloading failed 🔰『«﹝𝙇𝙐𝘾𝙄𝙁𝙀𝙍💀﹞»』🔰**\n{str(e)}\n**Name** - {name}\n**Link** - `{url}`"
                 )
                 continue
 
     except Exception as e:
         await m.reply_text(e)
-    await m.reply_text("**ᎠᏫNᎬ ᏴᏫᏚᏚ😎\n\n••.•´¯`•.••   🎀  𝐿𝒰𝒞𝐼𝐹𝐸𝑅  🎀   ••.•`¯´•.••\n\nALL LECTURES DOWLOADED SUCCESFULLY.🤗\nBY @LP_LUCIFER**")
+    await m.reply_text("**ᎠᏫNᎬ ᏴᏫᏚᏚ😎\n\n𝙇𝙐𝘾𝙄𝙁𝙀𝙍💀\n\nALL LECTURES DOWLOADED SUCCESFULLY.🤗\nBY @LP_LUCIFER**")
 
 
 print("ALL LECTURES DOWLOADED SUCCESFULLY.🤗\nBY @LP_LUCIFER")
