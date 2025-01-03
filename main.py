@@ -48,7 +48,7 @@ async def restart_handler(_, m):
 
 @bot.on_message(filters.command(["shiv"]))
 async def upload(bot: Client, m: Message):
-    editable = await m.reply_text('**-═════━‧₊˚❀༉‧₊˚.━═════-\n📝 ꜱᴇɴᴅ ᴛxᴛ ꜰɪʟᴇ ꜰᴏʀ ᴅᴏᴡɴʟᴏᴀᴅ**\n-═════━‧₊˚❀༉‧₊˚.━═════-\n.•´¯`•.••   🎀  𝐿𝒰𝒞𝐼𝐹𝐸𝑅  🎀   ••.•`¯´•.••')
+    editable = await m.reply_text('**-═════━‧₊˚❀༉‧₊˚.━═════-\n📝 ꜱᴇɴᴅ ᴛxᴛ ꜰɪʟᴇ ꜰᴏʀ ᴅᴏᴡɴʟᴏᴀᴅ**\n-═════━‧₊˚❀༉‧₊˚𝙇𝙐𝘾𝙄𝙁𝙀𝙍💀')
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
