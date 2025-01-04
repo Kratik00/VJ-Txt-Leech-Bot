@@ -36,7 +36,7 @@ sudo_groups = [-1002422521925]
 
 @bot.on_message(filters.command(["jaishreeram"]))    
 async def account_login(bot: Client, m: Message):    
-    editable = await m.reply_text("**👋 ʜᴇʟʟᴏ!\n🌟ɪ ᴀᴍ ᴛxᴛ ꜰɪʟᴇ ᴅᴏᴡʟᴏᴀᴅᴇʀ ʙᴏᴛ ** \n\n❤️‍🔥 **ᴘʀᴇꜱꜱ [baap se permission li?] ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ᴠɪᴅᴇᴏ ʙʏ ᴛxᴛ**\n\n❤💖 **ᴊᴏɪɴ ᴏᴜʀ <a href='https://t.me/LP_YAGAMI/'>ᴛᴇʟᴇɢʀᴀᴍ ᴄʜᴀɴɴᴇʟ</a>** \n\n<pre>💕 ᴘᴏᴡᴇʀᴇᴅ ʙʏ : https://t.me/LP_LUCIFER</pre>\n-═════━‧₊˚❀༉‧₊˚.━═════-")
+    editable = await m.reply_text("**👋 ʜᴇʟʟᴏ!\n🌟ɪ ᴀᴍ ᴛxᴛ ꜰɪʟᴇ ᴅᴏᴡʟᴏᴀᴅᴇʀ ʙᴏᴛ ** \n\n💀 **ᴘʀᴇꜱꜱ [baap se permission li?] ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ᴠɪᴅᴇᴏ ʙʏ ᴛxᴛ**\n\n❤💀 **ᴊᴏɪɴ ᴏᴜʀ <a href='https://t.me/LP_YAGAMI/'>ᴛᴇʟᴇɢʀᴀᴍ ᴄʜᴀɴɴᴇʟ</a>** \n\n<pre>🤨 ᴘᴏᴡᴇʀᴇᴅ ʙʏ : https://t.me/LP_LUCIFER</pre>\n-═════━‧₊˚❀༉‧₊˚.━═════-")
     
 @bot.on_message(filters.command("ruko"))
 async def restart_handler(_, m):
