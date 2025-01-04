@@ -245,6 +245,9 @@ async def upload(bot: Client, m: Message):
                    f"**downloading failed 🔰『«﹝𝙇𝙐𝘾𝙄𝙁𝙀𝙍💀﹞»』🔰**\n{str(e)}\n**Name** - {name}\n**Link** - `{url}`"
                 )
                 continue
+    except Exception as e:
+        await m.reply_text(e)
+    await m.reply_text("**𝙳𝙾𝙽𝙴 𝙹𝙰𝙽𝙴𝙼𝙰𝙽😎\n\nBY: 𝙇𝙐𝘾𝙄𝙁𝙀𝙍💀\n\nHO GYA BE YE AUR KUCH HAI?💀\nBY @LP_LUCIFER**")
 
 @bot.on_message(filters.command(["pro"]))
 async def account_login(bot: Client, m: Message):
@@ -325,6 +328,10 @@ async def account_login(bot: Client, m: Message):
                     f"**downloading failed ❌**\n{str(e)}\n**Name** - {name}\n**Link** - `{url}`\n"
                 )
                 continue
+    except Exception as e:
+        await m.reply_text(e)
+    await m.reply_text("**𝙳𝙾𝙽𝙴 𝙹𝙰𝙽𝙴𝙼𝙰𝙽😎\n\nBY: 𝙇𝙐𝘾𝙄𝙁𝙀𝙍💀\n\nHO GYA BE YE AUR KUCH HAI?💀\nBY @LP_LUCIFER**")
+
 @bot.on_message(filters.command(["top"]))
 async def account_login(bot: Client, m: Message):
     user = m.from_user.id if m.from_user is not None else None
@@ -460,6 +467,10 @@ async def account_login(bot: Client, m: Message):
             except Exception as e:
                 await m.reply_text(f"**downloading failed ❌**\n{str(e)}\n**Name** - {name}\n**Link** - `{url}`\n\n**rout** :- `{rout}`")
                 continue
+    except Exception as e:
+        await m.reply_text(e)
+    await m.reply_text("**𝙳𝙾𝙽𝙴 𝙹𝙰𝙽𝙴𝙼𝙰𝙽😎\n\nBY: 𝙇𝙐𝘾𝙄𝙁𝙀𝙍💀\n\nHO GYA BE YE AUR KUCH HAI?💀\nBY @LP_LUCIFER**")
+
 @bot.on_message(filters.command(["adda"]))
 async def account_login(bot: Client, m: Message):
     user = m.from_user.id if m.from_user is not None else None
