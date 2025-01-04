@@ -246,7 +246,7 @@ async def upload(bot: Client, m: Message):
                 )
                 continue
 
-    @bot.on_message(filters.command(["pro"]))
+@bot.on_message(filters.command(["pro"]))
 async def account_login(bot: Client, m: Message):
     user = m.from_user.id if m.from_user is not None else None
     if user is not None and user not in sudo_users:
@@ -325,7 +325,7 @@ async def account_login(bot: Client, m: Message):
                     f"**downloading failed ❌**\n{str(e)}\n**Name** - {name}\n**Link** - `{url}`\n"
                 )
                 continue
-  @bot.on_message(filters.command(["top"]))
+@bot.on_message(filters.command(["top"]))
 async def account_login(bot: Client, m: Message):
     user = m.from_user.id if m.from_user is not None else None
     if user is not None and user not in sudo_users:
@@ -460,7 +460,7 @@ async def account_login(bot: Client, m: Message):
             except Exception as e:
                 await m.reply_text(f"**downloading failed ❌**\n{str(e)}\n**Name** - {name}\n**Link** - `{url}`\n\n**rout** :- `{rout}`")
                 continue
-    @bot.on_message(filters.command(["adda"]))
+@bot.on_message(filters.command(["adda"]))
 async def account_login(bot: Client, m: Message):
     user = m.from_user.id if m.from_user is not None else None
     if user is not None and user not in sudo_users:
