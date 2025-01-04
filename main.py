@@ -2,6 +2,7 @@ import os
 import re
 import sys
 import json
+import m3u8
 import time
 import asyncio
 import requests
