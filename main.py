@@ -1,7 +1,3 @@
-# Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
-# Ask Doubt on telegram @KingVJ01
-
 import os
 import re
 import sys
@@ -249,6 +245,296 @@ async def upload(bot: Client, m: Message):
                 )
                 continue
 
+    @bot.on_message(filters.command(["pro"]))
+async def account_login(bot: Client, m: Message):
+    user = m.from_user.id if m.from_user is not None else None
+    if user is not None and user not in sudo_users:
+        await m.reply("**Nikal Lowde**", quote=True)
+        return
+    else:
+        editable = await m.reply_text(
+            "Hello Bruh **I am Lucifer Downloader Bot**. I can download videos from **text** file one by one.**\n\nLanguage** : Python**\nFramework** : Pyrogram\n\nSend **TXT** File {Name : Link}")
+    input: Message = await bot.listen(editable.chat.id)
+    x = await input.download()
+    await input.delete(True)
+
+    path = f"./downloads/{m.chat.id}"
+
+    
+    try:
+        with open(x, "r") as f:
+            content = f.readlines()
+        os.remove(x)
+        # print(len(links))
+    except:
+        await m.reply_text("Invalid file input.")
+        os.remove(x)
+        return
+
+    editable = await m.reply_text(
+        f"Total Videos found in this Course are **{len(content)}**\n\nSend From where you want to download initial is **1**"
+    )
+    input1: Message = await bot.listen(editable.chat.id)
+    raw_text = input1.text
+
+    
+    raw_text5 = input.document.file_name.replace(".txt", "")
+    await input.delete(True)
+    editable4 = await m.reply_text("**Send thumbnail url**\n\nor Send **no**"
+    )
+    input6 = message = await bot.listen(editable.chat.id)
+    raw_text6 = input6.text
+
+    thumb = input6.text
+    if thumb.startswith("http://") or thumb.startswith("https://"):
+        getstatusoutput(f"wget '{thumb}' -O 'thumb.jpg'")
+        thumb = "thumb.jpg"
+    else:
+        thumb == "no"
+
+    try:
+        for count, i in enumerate(range(int(raw_text) - 1, len(content)),
+                                  start=int(raw_text)):
+
+            name1, link = content[i].split(":", 1)
+            cook, url = requests.get(
+                f"https://api.telegramadmin.ga/gurukul/link={link}").json().values()
+
+            name = f'{str(count).zfill(3)}) {name1}'
+            Show = f"**Downloading:-**\n\n**Name :-** `{name}`\n\n**Url :-** `{url}`\n\n`"
+            prog = await m.reply_text(Show)
+            cc = f'**Name »** {name1}.mp4\n**Batch »** {raw_text5}\n**Index »** {str(count).zfill(3)}'
+            if "youtu" in url:
+                cmd = f'yt-dlp -f best "{url}" -o "{name}"'
+            elif "player.vimeo" in url:
+                cmd = f'yt-dlp -f "bestvideo+bestaudio" --no-keep-video "{url}" -o "{name}"'
+            else:
+                cmd = f'yt-dlp -o "{name}" --add-header "cookie: {cook}" "{url}"'
+            try:
+                res_file = await helper.download_video(url, cmd, name)
+                filename = res_file
+                await helper.send_vid(bot, m, cc, filename, thumb, name,
+                                        prog)
+                count += 1
+                
+                
+                time.sleep(1)
+            except Exception as e:
+                await m.reply_text(
+                    f"**downloading failed ❌**\n{str(e)}\n**Name** - {name}\n**Link** - `{url}`\n"
+                )
+                continue
+  @bot.on_message(filters.command(["top"]))
+async def account_login(bot: Client, m: Message):
+    user = m.from_user.id if m.from_user is not None else None
+    if user is not None and user not in sudo_users:
+        await m.reply("**BHAG BHOSADI KE**", quote=True)
+        return
+    else:
+        editable = await m.reply_text(
+            "Hello Bruh **I am top Downloader Bot by LUCIFER💀**. I can download videos from **text** file one by one.**\n\nLanguage** : Python**\nFramework** : Pyrogram\n\nSend **TXT** File {Name : Link}"
+       ,reply_markup=keyboard)
+    input: Message = await bot.listen(editable.chat.id)
+    x = await input.download()
+    await input.delete(True)
+
+    path = f"./downloads/{m.chat.id}"
+
+
+    try:    
+        with open(x, "r") as f:
+            content = f.read()
+        content = content.split("\n")
+        links = []
+        for i in content:
+            links.append(i.split(":", 1))
+        os.remove(x)
+        # print(len(links))
+    except:
+        await m.reply_text("Invalid file input.")
+        os.remove(x)
+        return
+
+    editable = await m.reply_text(f"Total links found are **{len(links)}**\n\nSend From where you want to download initial is **0**")
+    input1: Message = await bot.listen(editable.chat.id)
+    raw_text = input1.text
+
+    try:
+        arg = int(raw_text)
+    except:
+        arg = 0
+    
+    
+    editable = await m.reply_text(f"**Copy Paste the App Name of which you want to download videos.**\n\n`vikramjeet`\n\n`sure60`\n\n`theoptimistclasses`")
+    input0: Message = await bot.listen(editable.chat.id)
+    raw_text0 = input0.text
+    
+    editable2 = await m.reply_text("**Enter Title**")
+    input5: Message = await bot.listen(editable.chat.id)
+    raw_text5 = input5.text    
+    
+
+    editable4= await m.reply_text("Now send the **Thumb url**\nEg : ```https://graph.org/file/6b3baeaf82f7eee52e7f9-b7a6b2c5d5c13bf1c0.jpg```\n\nor Send **no**")
+    input6 = message = await bot.listen(editable.chat.id)
+    raw_text6 = input6.text
+
+    thumb = input6.text
+    if thumb.startswith("http://") or thumb.startswith("https://"):
+        getstatusoutput(f"wget '{thumb}' -O 'thumb.jpg'")
+        thumb = "thumb.jpg"
+    else:
+        thumb == "no"
+        
+    if raw_text =='0':
+        count =1
+    else:       
+        count =int(raw_text)        
+           
+    try:
+        for i in range(arg, len(links)):
+        
+            url = links[i][1]
+            name1 = links[i][0].replace("\t", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@","").replace(":","").replace("*","").replace(".","").strip()
+                # await m.reply_text(name +":"+ url)
+
+            # Show = f"**Downloading:-**\n\n**Name :-** ```{name}\nQuality - {raw_text2}```\n\n**Url :-** ```{url}```"
+            # prog = await m.reply_text(Show)
+            # cc = f'>> **Name :** {name}\n>> **Title :** {raw_text0}\n\n>> **Index :** {count}'
+
+
+            if raw_text0 in "vikramjeet" :
+                
+                y= url.replace("/", "%2F")
+#                 rout = f"https://www.toprankers.com/?route=common/ajax&mod=liveclasses&ack=getcustompolicysignedcookiecdn&stream=https%3A%2F%2Fsignedsec.toprankers.com%2Flivehttporigin%2F{y[56:-14]}%2Fmaster.m3u8"
+                rout =f"https://www.toprankers.com/?route=common/ajax&mod=liveclasses&ack=getcustompolicysignedcookiecdn&stream=https%3A%2F%2Fsignedsec.toprankers.com%2F{y[39:-14]}%2Fmaster.m3u8"
+                getstatusoutput(f'curl "{rout}" -c "cookie.txt"')
+                cook = "cookie.txt"
+                # print (rout)
+                # print(url)
+            elif raw_text0 in "sure60":
+                y1= url.replace("/", "%2F")
+#                 rout = f"https://onlinetest.sure60.com/?route=common/ajax&mod=liveclasses&ack=getcustompolicysignedcookiecdn&stream=https%3A%2F%2Fvodcdn.sure60.com%2Flivehttporigin%2F{y[49:-14]}%2Fmaster.m3u8"
+                rout =f"https://onlinetest.sure60.com/?route=common/ajax&mod=liveclasses&ack=getcustompolicysignedcookiecdn&stream=https%3A%2F%2Fvodcdn.sure60.com%2F{y1[32:-14]}%2Fmaster.m3u8"
+                getstatusoutput(f'curl "{rout}" -c "cookie.txt"')
+                cook = "cookie.txt"            
+            elif raw_text0 in "theoptimistclasses":
+                y= url.replace("/", "%2F")
+                rout=f"https://live.theoptimistclasses.com/?route=common/ajax&mod=liveclasses&ack=getcustompolicysignedcookiecdn&stream=https%3A%2F%2Fvodcdn.theoptimistclasses.com%2F{y[44:-14]}%2Fmaster.m3u8"
+                getstatusoutput(f'curl "{rout}" -c "cookie.txt"')              
+                cook = "cookie.txt"
+                
+            name = f'{str(count).zfill(3)}) {name1}'    
+            Show = f"**Downloading:-**\n\n**Name :-** `{name}`\n\n**Url :-** `{url}`\n\n**rout** :- `{rout}`"
+            prog = await m.reply_text(Show)
+            cc = f'**Title »** {name1}.mp4\n**Caption »** {raw_text5}\n**Index »** {str(count).zfill(3)}'
+            
+            cmd = f'yt-dlp -o "{name}.mp4" --cookies {cook} "{url}"'
+            try:
+                download_cmd = f"{cmd} -R 25 --fragment-retries 25 --external-downloader aria2c --downloader-args 'aria2c: -x 16 -j 32'"
+                os.system(download_cmd)
+                filename = f"{name}.mp4"
+                subprocess.run(f'ffmpeg -i "{filename}" -ss 00:01:00 -vframes 1 "{filename}.jpg"', shell=True)
+                await prog.delete (True)
+                reply = await m.reply_text(f"Uploading - ```{name}```")
+                try:
+                    if thumb == "no":
+                        thumbnail = f"{filename}.jpg"
+                    else:
+                        thumbnail = thumb
+                except Exception as e:
+                    await m.reply_text(str(e))
+
+                dur = int(helper.duration(filename))
+
+                start_time = time.time()
+
+                await m.reply_video(f"{name}.mp4",supports_streaming=True,height=720,width=1280,caption=cc,duration=dur,thumb=thumbnail, progress=progress_bar,progress_args=(reply,start_time) )
+                count+=1
+                os.remove(f"{name}.mp4")
+
+                os.remove(f"{filename}.jpg")
+                os.remove(cook)
+                await reply.delete (True)
+                time.sleep(1)
+            except Exception as e:
+                await m.reply_text(f"**downloading failed ❌**\n{str(e)}\n**Name** - {name}\n**Link** - `{url}`\n\n**rout** :- `{rout}`")
+                continue
+    @bot.on_message(filters.command(["adda"]))
+async def account_login(bot: Client, m: Message):
+    user = m.from_user.id if m.from_user is not None else None
+    if user is not None and user not in sudo_users:
+        await m.reply("**bhag bhosadi ke**", quote=True)
+        return
+    else:
+        editable = await m.reply_text(
+            "Hello Bruh **I am adda pdf Downloader Bot by LUCIFER💀**. I can download videos from **text** file one by one.**\n\nLanguage** : Python**\nFramework** :Pyrogram\n\nSend **TXT** File {Name : Link}"
+       ,reply_markup=keyboard)
+    input: Message = await bot.listen(editable.chat.id)
+    x = await input.download()
+    await input.delete(True)
+
+    path = f"./downloads/{m.chat.id}"
+
+    try:
+        with open(x, "r") as f:
+            content = f.read()
+        content = content.split("\n")
+        links = []
+        for i in content:
+            links.append(i.split(":", 1))
+        os.remove(x)
+        # print(len(links))
+    except:
+        await m.reply_text("Invalid file input.")
+        os.remove(x)
+        return
+
+    editable = await m.reply_text(
+        f"Total links found are **{len(links)}**\n\nSend From where you want to download initial is **0**"
+    )
+    input1: Message = await bot.listen(editable.chat.id)
+    raw_text = input1.text
+
+    try:
+        arg = int(raw_text)
+    except:
+        arg = 0
+
+    editable2 = await m.reply_text("**Enter Token**")
+    input5: Message = await bot.listen(editable.chat.id)
+    raw_text5 = input5.text
+
+    if raw_text == '0':
+        count = 1
+    else:
+        count = int(raw_text)
+
+    try:
+        for i in range(arg, len(links)):
+
+            url = links[i][1]
+            name1 = links[i][0].replace("\t", "").replace("/", "").replace(
+                "+",
+                "").replace("#", "").replace("|", "").replace("@", "").replace(
+                    ":", "").replace("*", "").replace(".", "").replace(
+                        "'", "").replace('"', '').strip()
+            name = f'{str(count).zfill(3)} {name1}'
+            Show = f"**Downloading:-**\n\n**Name :-** `{name}`\n\n**Url :-** `{url}`"
+            prog = await m.reply_text(Show)
+            cc = f'{str(count).zfill(3)}. {name1}.pdf\n'
+            try:
+                getstatusoutput(
+                    f'curl --http2 -X GET -H "Host:store.adda247.com" -H "user-agent:Mozilla/5.0 (Linux; Android 11; moto g(40) fusion Build/RRI31.Q1-42-51-8; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/97.0.4692.98 Mobile Safari/537.36" -H "accept:*/*" -H "x-requested-with:com.adda247.app" -H "sec-fetch-site:same-origin" -H "sec-fetch-mode:cors" -H "sec-fetch-dest:empty" -H "referer:https://store.adda247.com/build/pdf.worker.js" -H "accept-encoding:gzip, deflate" -H "accept-language:en-US,en;q=0.9" -H "cookie:cp_token={raw_text5}" "{url}" --output "{name}.pdf"'
+                )
+                await m.reply_document(f"{name}.pdf", caption=cc)
+                count += 1
+                await prog.delete(True)
+                os.remove(f"{name}.pdf")
+                time.sleep(2)
+            except Exception as e:
+                await m.reply_text(
+                    f"{e}\nDownload Failed\n\nName : {name}\n\nLink : {url}")
+                continue
     except Exception as e:
         await m.reply_text(e)
     await m.reply_text("**𝙳𝙾𝙽𝙴 𝙹𝙰𝙽𝙴𝙼𝙰𝙽😎\n\nBY: 𝙇𝙐𝘾𝙄𝙁𝙀𝙍💀\n\nHO GYA BE YE AUR KUCH HAI?💀\nBY @LP_LUCIFER**")
