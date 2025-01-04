@@ -35,6 +35,21 @@ auth_users = [7376514183,5398544600]
 sudo_users = auth_users
 sudo_groups = [-1002422521925]
 
+keyboard = InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton(
+                text="Devloper",
+                url="https://t.me/LP_LUCIFER",
+            ),
+            InlineKeyboardButton(
+                text="Repo",
+                url="https://github.com/",
+            ),
+        ],
+    ]
+)
+
 @bot.on_message(filters.command(["jaishreeram"]))    
 async def account_login(bot: Client, m: Message):    
     editable = await m.reply_text("**𝐇𝐞𝐥𝐥𝐨 𝐃𝐞𝐚𝐫  👋!\n\n➠ 𝐈 𝐚𝐦 𝐚 𝐓𝐞𝐱𝐭 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐞𝐫 𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐖𝐢𝐭𝐡 CHUTIYAPA\n➠ Can Extract Videos & Pdf Form Your Text File and Upload to Telegram\n\n➠ 𝐔𝐬𝐞 [BHAG JA NALLE] 𝐂𝐨𝐦𝐦𝐚𝐧𝐝 𝐓𝐨 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐅𝐫𝐨𝐦 𝐓𝐗𝐓 𝐅𝐢𝐥𝐞\n\n➠Type /pro /top /adda for more proceedings\n\n➠𝐌𝐚𝐝𝐞 𝐁𝐲: @LP_LUCIFER **\n")
