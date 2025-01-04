@@ -34,6 +34,9 @@ bot = Client(
     api_id=API_ID,
     api_hash=API_HASH,
     bot_token=BOT_TOKEN)
+auth_users = [7376514183]
+sudo_users = auth_users
+sudo_groups = [-1002422521925]
 
 @bot.on_message(filters.command(["jaishreeram"]))    
 async def account_login(bot: Client, m: Message):    
