@@ -595,6 +595,10 @@ async def account_login(bot: Client, m: Message):
                 await m.reply_text(
                     f"{e}\nDownload Failed\n\nName : {name}\n\nLink : {url}")
                 continue
+    except Exception as e:
+        await m.reply_text(e)
+    await m.reply_text("**𝙳𝙾𝙽𝙴 𝙹𝙰𝙽𝙴𝙼𝙰𝙽😎\n\nBY: 𝙇𝙐𝘾𝙄𝙁𝙀𝙍💀\n\nHO GYA BE YE AUR KUCH HAI?💀\nBY @LP_LUCIFER**")
+      
 
 @bot.on_message(filters.command(["cw"]))
 async def start(bot, update):
@@ -895,11 +899,6 @@ async def account_login(bot: Client, m: Message):
             except Exception as e:
                 await m.reply_text(str(e))
             #await m.reply_text("Done")
-    except Exception as e:
-        print(str(e))
-    await m.reply_text("Done")
-
-bot.run()
     except Exception as e:
         await m.reply_text(e)
     await m.reply_text("**𝙳𝙾𝙽𝙴 𝙹𝙰𝙽𝙴𝙼𝙰𝙽😎\n\nBY: 𝙇𝙐𝘾𝙄𝙁𝙀𝙍💀\n\nHO GYA BE YE AUR KUCH HAI?💀\nBY @LP_LUCIFER**")
