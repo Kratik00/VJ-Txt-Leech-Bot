@@ -15,7 +15,6 @@ from pyrogram.types.messages_and_media import message
 import tgcrypto
 import pyrogram
 from pyrogram.types import User, Message
-from bot import botStartTime
 import shutil, psutil
 from subprocess import getstatusoutput
 import logging
