@@ -203,12 +203,6 @@ async def upload(bot: Client, m: Message):
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").strip()
             name = f'{str(count).zfill(3)}) {name1[:60]}'
 
-            elif "tencdn.classplusapp" in url:
-                headers = {'Host': 'api.classplusapp.com', 'x-access-token': 'eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJpZCI6MTI0NDQyMjIwLCJvcmdJZCI6MTMxNSwidHlwZSI6MSwibW9iaWxlIjoiOTE3NDA0MDM0NjQ3IiwibmFtZSI6Ikt1bmFsICIsImVtYWlsIjoia3VuYWxkYWxhbDAzMDlAZ21haWwuY29tIiwiaXNGaXJzdExvZ2luIjp0cnVlLCJkZWZhdWx0TGFuZ3VhZ2UiOiJFTiIsImNvdW50cnlDb2RlIjoiSU4iLCJpc0ludGVybmF0aW9uYWwiOjAsImlzRGl5Ijp0cnVlLCJsb2dpblZpYSI6Ik90cCIsImZpbmdlcnByaW50SWQiOiI4M2M4ZDczOTAwYzc0NjYzYzI2MGJkMzA1ZDYxOTM0MCIsImlhdCI6MTcxODg3Njg5MSwiZXhwIjoxNzE5NDgxNjkxfQ.tV2t5whgnQwrfWLibVIOHV5JN0iDdQwlqDtVDCT_i1zQy4lhF_G3a0zfz7e5S8re', 'user-agent': 'Mobile-Android', 'app-version': '1.4.37.1', 'api-version': '18', 'device-id': '5d0d17ac8b3c9f51', 'device-details': '2848b866799971ca_2848b8667a33216c_SDK-30', 'accept-encoding': 'gzip'}
-                params = (('url', f'{url}'),)
-                response = requests.get('https://api.classplusapp.com/cams/uploader/video/jw-signed-url', headers=headers, params=params)
-                url = response.json()['url']	
-
             if "youtu" in url:
                 ytf = f"b[height<={raw_text2}][ext=mp4]/bv[height<={raw_text2}][ext=mp4]+ba[ext=m4a]/b[ext=mp4]"
             else:
@@ -218,6 +212,14 @@ async def upload(bot: Client, m: Message):
                 cmd = f'yt-dlp -o "{name}.mp4" "{url}"'
             else:
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
+                
+           if "m3u8" or "livestream" in url:
+                cmd = f'yt-dlp -f "{ytf}" --no-keep-video --remux-video mkv "{url}" -o "romeo.mp4"'
+                #cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.%(ext)s"'
+            else: 
+                cmd = f'yt-dlp -f "{ytf}" --no-keep-video --remux-video mkv "{url}" -o "romeo.mp4"'
+                print("counted 2 ")
+            
 
             try:  
                 
