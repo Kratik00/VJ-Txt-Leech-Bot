@@ -68,10 +68,15 @@ async def restart_handler(_, m):
 
 @bot.on_message(filters.command(["shiv"]))
 async def upload(bot: Client, m: Message):
-    editable = await m.reply_text('*➠ 𝐒𝐞𝐧𝐝 𝐌𝐞 𝐘𝐨𝐮𝐫 𝐓𝐗𝐓 𝐅𝐢𝐥𝐞 𝐢𝐧 𝐀 𝐏𝐫𝐨𝐩𝐞𝐫 𝐖𝐚𝐲 \n\n➠ TXT FORMAT : LINK : URL \n➠ 𝐌𝐨𝐝𝐢𝐟𝐢𝐞𝐝 𝐁𝐲:  @LP_LUCIFER*')
+    user = m.from_user.id if m.from_user is not None else None
+    if user is not None and user not in sudo_users:
+        await m.reply("**Bhai/behen thoda saste nashe kam karein**", quote=True)
+        return
+    else:
+        editable = await m.reply_text('*➠ 𝐒𝐞𝐧𝐝 𝐌𝐞 𝐘𝐨𝐮𝐫 𝐓𝐗𝐓 𝐅𝐢𝐥𝐞 𝐢𝐧 𝐀 𝐏𝐫𝐨𝐩𝐞𝐫 𝐖𝐚𝐲 \n\n➠ TXT FORMAT : LINK : URL \n➠ 𝐌𝐨𝐝𝐢𝐟𝐢𝐞𝐝 𝐁𝐲:  @LP_LUCIFER*')
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
-    await input.delete(True)
+    await input.delete(True)    
 
     path = f"./downloads/{m.chat.id}"
 
