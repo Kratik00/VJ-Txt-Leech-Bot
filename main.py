@@ -37,7 +37,7 @@ bot = Client(
     api_id=API_ID,
     api_hash=API_HASH,
     bot_token=BOT_TOKEN)
-auth_users = [7376514183,7372337682,5398544600]
+auth_users = [7376514183,7372337682,5398544600,5744241317]
 sudo_users = auth_users
 sudo_groups = [-1002422521925]
 
